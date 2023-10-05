@@ -29,15 +29,12 @@ links.forEach(link => {
 
 loadPage('home')
 
-const observer = new MutationObserver(list => {
+const observer = new MutationObserver(() => {
   if (document.querySelector('.cv-page')) {
     const downloadLink = document.getElementById('download');
 
     downloadLink.addEventListener('click', function (e) {
-      const confirmed = confirm('Realizar o download?');
-      if (!confirmed) {
-        e.preventDefault();
-      }
+      window.print()
     });
   }
 }).observe(document.body, { attributes: true, childList: true, subtree: true });

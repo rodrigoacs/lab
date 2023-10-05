@@ -77,8 +77,51 @@ p {
   margin-top: 2rem;
 }
 
+.cv-page a {
+  color: var(--color-text-secondary);
+}
+
+/* ---- */
+/* blog */
+/* ---- */
+.blog-post b {
+  color: var(--color-text-primary);
+}
+
+.blog-post {
+  padding: 1rem;
+}
+
+.blog-post-link {
+  display: block;
+  margin-bottom: 2rem;
+  transition: all 0.1s;
+}
+
+.blog-post-link:hover {
+  border-left: .2rem solid var(--color-text-primary);
+}
+
+/* ---- */
+/* ---- */
+/* ---- */
+
 @media screen and (max-width: 768px) {
   body {
     margin: 0 1rem;
+  }
+}
+
+@media print {
+  * {
+    color: #000 !important;
+    background-color: #fff !important;
+  }
+
+  .navbar a,
+  #download,
+  .emoji {
+    display: none;
+    color: #fff !important;
   }
 }
