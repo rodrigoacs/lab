@@ -29,7 +29,20 @@ a {
   color: var(--color-text-primary);
 }
 
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: var(--color-text-secondary);
+  padding: 10px;
+  opacity: 0.25;
+}
+
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 4rem 0px;
 }
 
@@ -77,7 +90,8 @@ p {
   margin-top: 2rem;
 }
 
-.cv-page a {
+.cv-page a,
+.cv-page li {
   color: var(--color-text-secondary);
 }
 

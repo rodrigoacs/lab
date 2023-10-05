@@ -1,0 +1,21 @@
+{
+  "header": "olá, eu sou o Rodrigo! 👨🏻‍💻",
+  "name": "Rodrigo Augusto Correa Soares <a id='download' class='link fa-solid fa-floppy-disk' style='font-size: 1.2rem;' translate='download'></a>",
+  "birth-date": "14/05/2003",
+  "location": "CONGONHAS, MINAS GERAIS",
+  "email": "rodrigohths@gmail.com",
+  "github": "GitHub",
+  "linkedin": "LinkedIn",
+  "website": "Site",
+  "objective": "Objetivo",
+  "objective-content": "Estou em busca de uma oportunidade para expandir meus conhecimentos e aplicá-los na prática, visando meu desenvolvimento na área em que desejo atuar, ao mesmo tempo em que contribuo para o crescimento e sucesso da empresa.",
+  "skills": "Habilidades",
+  "skill1": "SQL, C, Java, Javascript, HTML e CSS",
+  "skill2": "Versionamento Git.",
+  "skill3": "Inglês básico.",
+  "experience": "Experiência",
+  "experience-content": "FEVEREIRO DE 2023 - ATUALMENTE<br>CLI Consultoria - Estagiário - Desenvolvimento ETL",
+  "education": "Formação",
+  "education1": "JANEIRO DE 2018 - ABRIL DE 2021 (CONCLUÍDO)<br>IFMG Campus Congonhas, Congonhas MG<br>Técnico Integrado em Mecânica",
+  "education2": "SETEMBRO DE 2022 - (CURSANDO)<br>IFMG Campus Ouro Branco, Ouro Branco MG<br>Bacharelado em Sistemas de Informação"
+}
