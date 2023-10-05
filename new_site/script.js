@@ -4,11 +4,11 @@ const main = document.querySelector('main')
 const languageOptions = {
   'en-US': {
     icon: 'https://img.icons8.com/fluency/48/brazil-circular.png',
-    jsonFile: './en.json',
+    jsonFile: './en-US.json',
   },
   'pt-BR': {
     icon: 'https://img.icons8.com/fluency/48/usa-circular.png',
-    jsonFile: './pt.json',
+    jsonFile: './pt-BR.json',
   },
 };
 
@@ -54,7 +54,7 @@ loadPage('home')
 
 function loadContent(language) {
   let elements = document.querySelectorAll('[translate]')
-  fetch(`./${language}.json`)
+  fetch(`${languageOptions[language].jsonFile}`)
     .then(response => response.json())
     .then(data => {
       elements.forEach(element => {
