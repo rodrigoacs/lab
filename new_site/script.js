@@ -28,6 +28,7 @@ function loadPage(pageId) {
     .then(response => response.text())
     .then(data => {
       main.innerHTML = data
+      document.title = `${pageId} | rodrigoacs.com`
     })
     .catch(error => console.error('Error:', error))
 }
