@@ -12,6 +12,8 @@ const languageOptions = {
   },
 };
 
+loadPage('home')
+
 let language = navigator.language || navigator.userLanguage
 
 window.onload = function () {
@@ -51,11 +53,10 @@ links.forEach(link => {
   })
 })
 
-loadPage('home')
 
 function loadContent(language) {
   let elements = document.querySelectorAll('[translate]')
-  fetch(`${languageOptions[language].jsonFile}`)
+  fetch(languageOptions[language].jsonFile)
     .then(response => response.json())
     .then(data => {
       elements.forEach(element => {
@@ -87,6 +88,5 @@ function activeDownload() {
 
 const observer = new MutationObserver(() => {
   loadContent(language)
-
   activeDownload()
 }).observe(document.body.querySelector('.ajax'), { attributes: true, childList: true, subtree: false });
