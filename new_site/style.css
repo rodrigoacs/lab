@@ -17,12 +17,14 @@ html {
   background-color: var(--color-primary);
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
+  min-height: 100%;
 }
 
 body {
   margin: 0 auto;
   max-width: 42rem;
   box-sizing: border-box;
+  min-height: 100%;
 }
 
 a {
@@ -31,13 +33,10 @@ a {
 }
 
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  opacity: 0.2;
+  margin-top: 100%;
+  padding-bottom: 1rem;
   color: var(--color-text-secondary);
-  padding: 10px;
-  opacity: 0.25;
 }
 
 #change-language {
@@ -130,12 +129,15 @@ p {
 .blog-post-link:hover {
   border-left: .2rem solid var(--color-text-primary);
 }
+
 /* ---- */
 /* ---- */
 /* ---- */
 
 
-.navbar::selection, a::selection, img::selection {
+.navbar::selection,
+a::selection,
+img::selection {
   color: none;
   background: rgba(0, 0, 0, 0);
 }
@@ -145,6 +147,7 @@ p {
     margin: 0 1rem;
   }
 }
+
 
 @media print {
   * {
@@ -157,5 +160,9 @@ p {
   .emoji {
     display: none;
     color: #fff !important;
+  }
+
+  footer {
+    display: none;
   }
 }
