@@ -7,17 +7,18 @@
   "github": "GitHub |",
   "linkedin": "LinkedIn |",
   "website": "Site",
-  "objective": "Objetivo",
-  "objective-content": "Estou em busca de uma oportunidade para expandir meus conhecimentos e aplicá-los na prática, visando meu desenvolvimento na área em que desejo atuar, ao mesmo tempo em que contribuo para o crescimento e sucesso da empresa.",
-  "skills": "Habilidades",
-  "skill1": "- SQL, C, Java, Javascript, HTML e CSS",
-  "skill2": "- Versionamento Git.",
-  "skill3": "- Inglês básico.",
+  "resume": "Resumo de qualificações",
+  "resume1": "Estou cursando o terceiro período de Sistemas de Informação no IFMG Campus Ouro Branco. Tenho interesse em aprimorar minhas habilidades técnicas em desenvolvimento backend e/ou fullstack, sendo estas as áreas que desejo atuar profissionalmente. Atualmente trabalho como estagiário de engenharia de dados construindo soluções de integração de dados voltadas ao setor terciário, especialmente de varejo, no Brasil.",
+  "skills": "Linguagens, ferramentas e softwares",
+  "skill1": "- SQL, JavaScript(Node.js), Python, HTML, CSS, Java e C.",
+  "skill2": "- Pentaho Data Integration, Postman, DBeaver e SAPGUI.",
+  "skill3": "- RDBMS: Oracle, PostgreSQL e MySQL.",
+  "skill4": "- Inglês intermediário.",
   "experience": "Experiência",
-  "experience-content": "FEVEREIRO DE 2023 - ATUALMENTE<br>CLI Consultoria - Estagiário - Desenvolvimento ETL",
+  "experience1": "FEVEREIRO DE 2023 - ATUALMENTE<br>CLI Consultoria - Estagiário - Desenvolvimento ETL",
+  "experience2": "Construção de integrações de dados entre bancos de dados relacionais e APIs baseadas em MongoDB, manutenção em aplicações legado, gerenciamento de pipeline de dados. Suporte técnico interno para sistemas Linux (Ubuntu, CentOS). Gerenciamento de instâncias AWS EC2.",
   "education": "Formação",
   "education1": "JANEIRO DE 2018 - ABRIL DE 2021 (CONCLUÍDO)<br>IFMG Campus Congonhas, Congonhas MG<br>Técnico Integrado em Mecânica",
   "education2": "SETEMBRO DE 2022 - (CURSANDO)<br>IFMG Campus Ouro Branco, Ouro Branco MG<br>Bacharelado em Sistemas de Informação",
-
-  "blogobs": ""
+  "blog": "leia alguns dos meus posts"
 }

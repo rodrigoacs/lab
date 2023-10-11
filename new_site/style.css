@@ -116,19 +116,15 @@ p {
 
 .blog-post {
   margin-top: 1rem;
-  padding: .5rem;
+  padding-bottom: .5rem;
 }
 
 .blog-post-link {
   display: block;
   margin-bottom: 2rem;
   transition: all 0.1s;
-  border-left: .2rem solid var(--color-primary);
 }
 
-.blog-post-link:hover {
-  border-left: .2rem solid var(--color-text-primary);
-}
 
 /* ---- */
 /* ---- */
@@ -153,6 +149,10 @@ img::selection {
   * {
     color: #000 !important;
     background-color: #fff !important;
+  }
+
+  .navbar {
+    margin-top: .5rem;
   }
 
   .navbar a,
