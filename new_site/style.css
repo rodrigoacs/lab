@@ -152,7 +152,7 @@ img::selection {
   }
 
   .navbar {
-    margin-top: .5rem;
+    margin: .5rem;
   }
 
   .navbar a,
