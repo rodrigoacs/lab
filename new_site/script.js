@@ -1,4 +1,3 @@
-const links = document.querySelectorAll('nav a:not(#change-language')
 const changeLanguageIcon = document.getElementById('change-language');
 const main = document.querySelector('main')
 const languageOptions = {
@@ -15,6 +14,14 @@ const languageOptions = {
 loadPage('home')
 
 let language = navigator.language || navigator.userLanguage
+let links = document.querySelectorAll('a:not(#change-language')
+links.forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault()
+    const pageId = this.getAttribute('href')
+    loadPage(pageId)
+  })
+})
 
 window.onload = function () {
   loadContent(language)
@@ -31,6 +38,7 @@ function loadPage(pageId) {
     .then(data => {
       main.innerHTML = data
       document.title = `${pageId} | rodrigoacs.com`
+      highlightLink(pageId)
     })
     .catch(error => console.error('Error:', error))
 }
@@ -43,15 +51,6 @@ function highlightLink(pageId) {
     }
   })
 }
-
-links.forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault()
-    const pageId = this.getAttribute('href')
-    highlightLink(pageId)
-    loadPage(pageId)
-  })
-})
 
 
 function loadContent(language) {

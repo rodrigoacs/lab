@@ -1,5 +1,9 @@
 {
   "header": "hello, I'm Rodrigo! 👨🏻‍💻",
+  "home1": "In 2018, I had my first experience with programming in high school, where I learned the Pascal language. After a break, I resumed programming in C in college, currently majoring in Information Systems",
+  "home2": "During this period, I developed an interest in web development, studying HTML, CSS, and JavaScript independently. Currently, I am focusing my studies on back-end development and mainly work with data integration, especially between databases and APIs, using SQL.",
+  "home3": "On this website, you will find information about me, my <a onclick=\"loadPage('cv')\">resume</a>, and my <a onclick=\"loadPage('blog')\">blog</a>, where I intend to share my knowledge and experiences. Additionally, you can check out some of my projects below.",
+  "projects":"projects",
   "name": "Rodrigo Augusto Correa Soares <a id='download' class='link fa-solid fa-floppy-disk' style='font-size: 1.2rem;' translate='download'></a>",
   "birth-date": " 05/14/2003",
   "location": " MINAS GERAIS, BRAZIL",

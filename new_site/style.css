@@ -1,9 +1,10 @@
 :root {
   --color-primary: #101010;
+  --color--black: #000;
   --color-text-primary: #fff;
   --color-text-secondary: #d4d4d4;
   --color-text-unfocused: #737373;
-  --color-text-highlight: #7e28e2;
+  --color-text-highlight: #5df80f;
 }
 
 * {
@@ -41,6 +42,19 @@ footer {
 
 #change-language {
   transition: all 0.3s;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+p {
+  text-align: justify;
+  color: var(--color-text-secondary);
+}
+
+.home p {
+  padding-bottom: 1rem;
 }
 
 #change-language:hover {
@@ -82,20 +96,13 @@ footer {
   font-weight: 500 !important;
 }
 
-h2 {
-  font-weight: 600;
-}
-
-p {
-  text-align: justify;
-  color: var(--color-text-secondary);
-}
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .title {
@@ -122,7 +129,11 @@ p {
 .blog-post-link {
   display: block;
   margin-bottom: 2rem;
-  transition: all 0.1s;
+  transition: all 0.3s;
+}
+
+.blog-post-link:hover {
+  transform: scale(1.025);
 }
 
 
@@ -136,6 +147,20 @@ a::selection,
 img::selection {
   color: none;
   background: rgba(0, 0, 0, 0);
+}
+
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 @media screen and (max-width: 768px) {

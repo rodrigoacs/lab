@@ -1,5 +1,9 @@
 {
   "header": "olá, eu sou o Rodrigo! 👨🏻‍💻",
+  "home1": "Em 2018, tive meu primeiro contato com programação no ensino médio, onde aprendi a linguagem Pascal. Após uma pausa, retomei a programação em C na faculdade, atualmente cursando Sistemas de Informação.",
+  "home2": "Durante esse período, desenvolvi interesse em desenvolvimento web, estudando HTML, CSS e JavaScript de forma independente. Atualmente, foco meus estudos no desenvolvimento back-end e trabalho principalmente com integração de dados, especialmente entre bancos de dados e APIs, utilizando SQL.",
+  "home3": "Neste site, você encontrará informações sobre mim, meu <a onclick=\"loadPage('cv')\">currículo</a> e meu <a onclick=\"loadPage('blog')\">blog</a>, onde pretendo compartilhar meus conhecimentos e experiências. Além disso, você pode conferir alguns dos meus projetos logo abaixo.",
+  "projects": "projetos",
   "name": "Rodrigo Augusto Correa Soares <a id='download' class='link fa-solid fa-floppy-disk' style='font-size: 1.2rem;' translate='download'></a>",
   "birth-date": " 14/05/2003",
   "location": " MINAS GERAIS, BRASIL",
