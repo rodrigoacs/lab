@@ -4,6 +4,7 @@
   "home2": "During this period, I developed an interest in web development, studying HTML, CSS, and JavaScript independently. Currently, I am focusing my studies on back-end development and mainly work with data integration, especially between databases and APIs, using SQL.",
   "home3": "On this website, you will find information about me, my <a onclick=\"loadPage('cv')\">resume</a>, and my <a onclick=\"loadPage('blog')\">blog</a>, where I intend to share my knowledge and experiences. Additionally, you can check out some of my projects below.",
   "projects":"projects",
+  "project1": "work hours calculator developed in HTML, CSS, and JavaScript (wip).",
   "name": "Rodrigo Augusto Correa Soares <a id='download' class='link fa-solid fa-floppy-disk' style='font-size: 1.2rem;' translate='download'></a>",
   "birth-date": " 05/14/2003",
   "location": " MINAS GERAIS, BRAZIL",
