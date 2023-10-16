@@ -38,35 +38,41 @@ function parseTime(date, time) {
 }
 
 function calculateTotal() {
-  const intervals = document.querySelectorAll(".interval")
-  let totalTime = 0
+  const intervals = document.querySelectorAll(".interval");
+  let totalTime = 0;
 
   for (const interval of intervals) {
-    const initial = interval.children[0].children[0].value
-    const final = interval.children[0].children[1].value
+    const initial = interval.children[0].children[0].value;
+    const final = interval.children[0].children[1].value;
+    const total = interval.children[0].children[2];
 
     if (initial && final) {
-      const taskTime = getTaskTotal(initial, final)
-      totalTime += taskTime
+      const taskTime = getTaskTotal(initial, final);
+      totalTime += taskTime;
+      const formattedTime = formatTime(taskTime);
+      const formattedHours = formattedTime[0].toString().padStart(2, '0');
+      const formattedMinutes = formattedTime[1].toString().padStart(2, '0');
+      total.value = `${formattedHours}:${formattedMinutes}`;
     }
   }
 
   if (totalTime === lastTotalTime) {
-    return
+    return;
   }
 
-  lastTotalTime = totalTime
+  lastTotalTime = totalTime;
 
-  const totalFormattedTime = formatTime(totalTime)
+  const totalFormattedTime = formatTime(totalTime);
   if (totalTime === 0) {
-    return result.innerText = "Nenhuma atividade adicionada"
+    return result.innerText = "Nenhuma atividade adicionada";
   }
 
-  const formattedHours = totalFormattedTime[0].toString().padStart(2, '0')
-  const formattedMinutes = totalFormattedTime[1].toString().padStart(2, '0')
+  const formattedHours = totalFormattedTime[0].toString().padStart(2, '0');
+  const formattedMinutes = totalFormattedTime[1].toString().padStart(2, '0');
 
-  result.innerText = `${formattedHours}:${formattedMinutes}`
+  result.innerText = `${formattedHours}:${formattedMinutes}`;
 }
+
 
 function formatTime(time) {
   const hours = parseInt(time / 60)
