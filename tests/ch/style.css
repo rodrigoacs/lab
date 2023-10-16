@@ -1,0 +1,86 @@
+:root {
+  --color--darkbh: #101010;
+  --color--lightbh: #eee;
+  --color--lighttext: #fff;
+  --color--darktext: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+*:not(input) {
+  color: var(--color--lighttext);
+}
+
+html {
+  background-color: var(--color--darkbh);
+  font-size: 16px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 42rem;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+input {
+  padding: 1rem;
+}
+
+input[type=time] {
+  width: 7rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+input[type=text] {
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: var(--color--darkbh);
+  color: var(--color--lighttext);
+  border: none;
+  cursor: pointer;
+}
+
+.interval {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.interval div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.interval div input[type=text] {
+  flex: 2;
+  text-align: center;
+}
+
+.interval input {
+  border: none;
+  margin: .1rem;
+  border-radius: .5rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
