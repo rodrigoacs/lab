@@ -25,7 +25,7 @@ html {
 
 body {
   margin: 0 auto;
-  max-width: 42rem;
+  max-width: 46rem;
   box-sizing: border-box;
   min-height: 100%;
 }
@@ -87,9 +87,9 @@ button {
 
 .interval {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 1rem;
   flex-wrap: wrap;
 }
 

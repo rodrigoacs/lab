@@ -1,7 +1,10 @@
+loadPage('home')
+
 const changeLanguageIcon = document.getElementById('change-language')
 const main = document.querySelector('main')
 const root = document.documentElement
 const img = document.getElementById('change-theme-img')
+const theme = document.getElementById('change-theme')
 const languageOptions = {
   'en-US': {
     icon: 'https://img.icons8.com/fluency/48/brazil-circular.png',
@@ -12,8 +15,6 @@ const languageOptions = {
     jsonFile: './pt-BR.json',
   },
 }
-
-loadPage('home')
 
 let language = navigator.language || navigator.userLanguage
 let links = document.querySelectorAll('.link:not(#change-language)')
@@ -96,7 +97,6 @@ const observer = new MutationObserver(() => {
   activeDownload()
 }).observe(document.body.querySelector('.ajax'), { attributes: true, childList: true, subtree: false })
 
-let theme = document.getElementById('change-theme')
 theme.addEventListener('click', changeTheme)
 
 function changeTheme() {

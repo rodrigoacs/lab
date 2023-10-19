@@ -146,6 +146,7 @@ p {
 
 .socials {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   text-align: justify;
   color: var(--color-text-secondary);
