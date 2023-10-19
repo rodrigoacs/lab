@@ -52,7 +52,6 @@ function highlightLink(pageId) {
   })
 }
 
-
 function loadContent(language) {
   let elements = document.querySelectorAll('[translate]')
   fetch(languageOptions[language].jsonFile)
