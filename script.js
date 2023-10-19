@@ -1,5 +1,7 @@
-const changeLanguageIcon = document.getElementById('change-language');
+const changeLanguageIcon = document.getElementById('change-language')
 const main = document.querySelector('main')
+const root = document.documentElement
+const img = document.getElementById('change-theme-img')
 const languageOptions = {
   'en-US': {
     icon: 'https://img.icons8.com/fluency/48/brazil-circular.png',
@@ -9,12 +11,12 @@ const languageOptions = {
     icon: 'https://img.icons8.com/fluency/48/usa-circular.png',
     jsonFile: './pt-BR.json',
   },
-};
+}
 
 loadPage('home')
 
 let language = navigator.language || navigator.userLanguage
-let links = document.querySelectorAll('a:not(#change-language')
+let links = document.querySelectorAll('.link:not(#change-language)')
 links.forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault()
@@ -26,10 +28,15 @@ links.forEach(link => {
 window.onload = function () {
   loadContent(language)
   updateLanguageIcon(language)
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setDark(root, img)
+  } else {
+    setLight(root, img)
+  }
 }
 
 function updateLanguageIcon(language) {
-  changeLanguageIcon.innerHTML = `<img width="24" height="24" src="${languageOptions[language].icon}" alt="${language}-circular"/>`;
+  changeLanguageIcon.innerHTML = `<img width="24" height="24" src="${languageOptions[language].icon}" alt="${language}-circular"/>`
 }
 
 function loadPage(pageId) {
@@ -80,11 +87,35 @@ function activeDownload() {
       downloadButton.addEventListener('click', () => {
         window.print()
       })
-    }, 500);
+    }, 500)
   }
 }
 
 const observer = new MutationObserver(() => {
   loadContent(language)
   activeDownload()
-}).observe(document.body.querySelector('.ajax'), { attributes: true, childList: true, subtree: false });
+}).observe(document.body.querySelector('.ajax'), { attributes: true, childList: true, subtree: false })
+
+let theme = document.getElementById('change-theme')
+theme.addEventListener('click', changeTheme)
+
+function changeTheme() {
+  if (root.classList.contains('light-mode')) {
+    setDark(root, img)
+  } else {
+    setLight(root, img)
+  }
+}
+
+function setDark(root, img) {
+  root.classList.remove('light-mode')
+  root.classList.add('dark-mode')
+  img.src = 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sun/3D/sun_3d.png'
+}
+
+function setLight(root, img) {
+
+  root.classList.remove('dark-mode')
+  root.classList.add('light-mode')
+  img.src = 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/New%20moon/3D/new_moon_3d.png'
+}
