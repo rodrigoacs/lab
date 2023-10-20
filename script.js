@@ -5,6 +5,7 @@ const main = document.querySelector('main')
 const root = document.documentElement
 const img = document.getElementById('change-theme-img')
 const theme = document.getElementById('change-theme')
+const projectSvg = document.querySelectorAll('.project-svg')
 const languageOptions = {
   'en-US': {
     icon: 'https://img.icons8.com/fluency/48/brazil-circular.png',
@@ -108,14 +109,21 @@ function changeTheme() {
 }
 
 function setDark(root, img) {
+  let projectSvg = document.querySelectorAll('.project-svg')
   root.classList.remove('light-mode')
   root.classList.add('dark-mode')
   img.src = 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sun/3D/sun_3d.png'
+  projectSvg.forEach(svg => {
+    svg.src = './assets/github-project-dark.svg'
+  })
 }
 
 function setLight(root, img) {
-
+  let projectSvg = document.querySelectorAll('.project-svg')
   root.classList.remove('dark-mode')
   root.classList.add('light-mode')
   img.src = 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/New%20moon/3D/new_moon_3d.png'
+  projectSvg.forEach(svg => {
+    svg.src = './assets/github-project-light.svg'
+  })
 }
