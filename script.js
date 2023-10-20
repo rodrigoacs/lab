@@ -93,6 +93,8 @@ function activeDownload() {
 const observer = new MutationObserver(() => {
   loadContent(language)
   activeDownload()
+  let tech = document.getElementById("tech")
+  tech.addEventListener("change", (() => filterTech(tech.value)))
 }).observe(document.body.querySelector('.ajax'), { attributes: true, childList: true, subtree: false })
 
 theme.addEventListener('click', changeTheme)
@@ -120,3 +122,19 @@ function setLight(root, img) {
     svg.src = './assets/github-project-light.svg'
   })
 }
+
+function filterTech(tech) {
+  const projects = document.querySelectorAll('.project')
+  projects.forEach((project) => {
+    if (!project.children[2].firstChild.classList.contains(`${tech}`)) {
+      project.style.display = "none"
+    } else {
+      project.style.display = "block"
+    }
+    if (tech === "all") {
+      project.style.display = "block"
+    }
+  })
+
+}
+

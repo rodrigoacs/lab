@@ -8,6 +8,7 @@
   --color-text-unfocused: #737373;
   --color-text-highlight: #5df80f;
   --color-javascript: #f1e05a;
+  --color-php: #4F5D95;
   --color-text-blue: #007acc;
   --color-public-bg: rgba(45, 212, 191, .1);
   --color-public: rgb(20, 184, 166);
@@ -22,6 +23,7 @@
   --color-text-unfocused: #666;
   --color-text-highlight: #007acc;
   --color-javascript: #f1e05a;
+  --color-php: #4F5D95;
   --color-text-blue: #007acc;
   --color-public-bg: rgba(45, 212, 191, .1);
   --color-public: rgb(20, 184, 166);
@@ -36,6 +38,7 @@
   --color-text-unfocused: #737373;
   --color-text-highlight: #5df80f;
   --color-javascript: #f1e05a;
+  --color-php: #4F5D95;
   --color-text-blue: #007acc;
   --color-public-bg: rgba(45, 212, 191, .1);
   --color-public: rgb(20, 184, 166);
@@ -146,6 +149,17 @@ p {
   border-radius: 50%;
   margin-right: .5rem;
   background-color: var(--color-javascript);
+}
+
+.php {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: .5rem;
+  background-color: var(--color-php);
 }
 
 .socials {
