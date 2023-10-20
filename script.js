@@ -30,11 +30,7 @@ links.forEach(link => {
 window.onload = function () {
   loadContent(language)
   updateLanguageIcon(language)
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    setDark(root, img)
-  } else {
-    setLight(root, img)
-  }
+  window.matchMedia('(prefers-color-scheme: dark)').matches ? setDark(root, img) : setLight(root, img)
 }
 
 function updateLanguageIcon(language) {
@@ -59,6 +55,7 @@ function highlightLink(pageId) {
       link.classList.add('active')
     }
   })
+  root.classList.contains('dark-mode') ? setDark(root, img) : setLight(root, img)
 }
 
 function loadContent(language) {
@@ -101,11 +98,7 @@ const observer = new MutationObserver(() => {
 theme.addEventListener('click', changeTheme)
 
 function changeTheme() {
-  if (root.classList.contains('light-mode')) {
-    setDark(root, img)
-  } else {
-    setLight(root, img)
-  }
+  root.classList.contains('light-mode') ? setDark(root, img) : setLight(root, img)
 }
 
 function setDark(root, img) {

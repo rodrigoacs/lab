@@ -123,6 +123,10 @@ p {
   margin: 0 .4rem;
 }
 
+.project-name:hover {
+  text-decoration: underline var(--color-text-blue) 1.5px;
+}
+
 .public {
   display: block;
   border-radius: 1rem;
@@ -153,12 +157,6 @@ p {
 }
 
 .icon {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 1rem;
-}
-
-.icon-small {
   width: 1.5rem;
   height: 1.5rem;
   margin-right: .5rem;
@@ -210,7 +208,7 @@ p {
 .header {
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-top: 2rem;
 }
 
