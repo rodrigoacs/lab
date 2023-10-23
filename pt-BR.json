@@ -3,6 +3,7 @@
   "home1": "Em 2018, tive meu primeiro contato com programação no ensino médio, onde aprendi a linguagem Pascal. Após uma pausa, retomei a programação em C na faculdade, atualmente cursando Sistemas de Informação.",
   "home2": "Durante esse período, desenvolvi interesse em desenvolvimento web, estudando HTML, CSS e JavaScript de forma independente. Atualmente, foco meus estudos no desenvolvimento back-end e trabalho principalmente com integração de dados, especialmente entre bancos de dados e APIs, utilizando SQL.",
   "home3": "Neste site, você encontrará informações sobre mim, meu <a onclick=\"loadPage('cv')\">currículo</a> e meu <a onclick=\"loadPage('blog')\">blog</a>, onde pretendo compartilhar meus conhecimentos e experiências. Além disso, você pode conferir alguns dos meus projetos logo abaixo.",
+  "option": "todos",
   "projects": "projetos",
   "project1": "calculadora de horas",
   "project2":"calcula intervalos de horas",

@@ -1,5 +1,5 @@
 :root {
-  transition: all .3s ease;
+  transition: all .3s;
   --color-primary: #101010;
   --color-black: #000;
   --color-hover: #181818;
@@ -44,12 +44,14 @@
   --color-public: rgb(20, 184, 166);
 }
 
+/* Reset de estilos e configurações gerais */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilo geral para a página */
 html {
   color: var(--color-text-primary);
   background-color: var(--color-primary);
@@ -70,6 +72,7 @@ a {
   color: var(--color-text-primary);
 }
 
+/* Rodapé */
 footer {
   opacity: .2;
   margin-top: 100%;
@@ -81,6 +84,7 @@ footer {
   transition: all .3s;
 }
 
+/* Títulos e parágrafos */
 h2 {
   font-weight: 600;
 }
@@ -90,6 +94,7 @@ p {
   color: var(--color-text-secondary);
 }
 
+/* Projetos */
 .project {
   display: block;
   width: 20rem;
@@ -130,6 +135,7 @@ p {
   text-decoration: underline var(--color-text-blue) 1.5px;
 }
 
+/* Publicações */
 .public {
   display: block;
   border-radius: 1rem;
@@ -140,17 +146,8 @@ p {
   padding: 0 .7rem;
 }
 
-.js {
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: .5rem;
-  background-color: var(--color-javascript);
-}
-
+/* Ícones de linguagens */
+.js,
 .php {
   position: relative;
   top: 1px;
@@ -159,9 +156,17 @@ p {
   height: 12px;
   border-radius: 50%;
   margin-right: .5rem;
+}
+
+.js {
+  background-color: var(--color-javascript);
+}
+
+.php {
   background-color: var(--color-php);
 }
 
+/* Redes Sociais */
 .socials {
   display: flex;
   flex-wrap: wrap;
@@ -188,6 +193,7 @@ p {
   transform: scale(.9);
 }
 
+/* Barra de navegação */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -230,14 +236,13 @@ p {
   margin-top: 2rem;
 }
 
+/* Página do CV */
 .cv-page a,
 .cv-page li {
   color: var(--color-text-secondary);
 }
 
-/* ---- */
-/* blog */
-/* ---- */
+/* Blog */
 .blog-post b {
   color: var(--color-text-secondary);
 }
@@ -261,12 +266,9 @@ p {
   color: var(--color-text-primary);
 }
 
-/* ---- */
-/* ---- */
-/* ---- */
-
+/* Select e Opções */
 select {
-  background-color: var(--color-primary);
+  background-color: transparent;
   color: var(--color-text-primary);
   border: none;
   padding: .5rem;
@@ -285,31 +287,24 @@ option:hover {
   color: var(--color-text-primary);
 }
 
-
-.navbar::selection,
-a::selection,
-img::selection {
-  color: none;
-  background: rgba(0, 0, 0, 0);
-}
-
-*::selection {
+/* Seleção de texto personalizada */
+::selection {
   color: var(--color-text-primary);
   background: var(--color-text-unfocused);
 }
 
-
+/* Barra de rolagem */
 ::-webkit-scrollbar {
   width: .5rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--color-black);
   border-radius: 1rem;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 @media screen and (max-width: 768px) {
