@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: sans-serif;
+      background-color: #000;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    input {
+      width: 417.81px;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      font-size: 20px;
+      outline: none;
+      text-align: center;
+    }
+
+    input:focus {
+      border: 2px solid #fff;
+    }
+
+    button {
+      width: 80px;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 5px;
+      background-color: #fff;
+      font-size: 20px;
+      outline: none;
+    }
+
+    button:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    button:active {
+      transform: scale(0.9);
+    }
+
+    #verify {
+      width: 417.81px;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 5px;
+      font-size: 20px;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="password">
+  <div>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+  </div>
+  <button id="verify">verificar</button>
+</body>
+
+<script src="script.js"></script>
+
+</html>
