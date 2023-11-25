@@ -10,11 +10,14 @@ let lastTotalTime = 0
 
 currentDate.innerText = getFormattedDate(current)
 
-previousDate.addEventListener("click", () => changeDate(-1))
-nextDate.addEventListener("click", () => changeDate(1))
 addActivityButton.addEventListener("click", addActivity)
 
-setInterval(calculateTotal, 500)
+setInterval(calculateTotal, 1)
+setInterval(saveInLocalStorage, 500)
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadIntervals()
+})
 
 function changeDate(days) {
   current.setDate(current.getDate() + days)
@@ -23,6 +26,7 @@ function changeDate(days) {
 
 function getFormattedDate(date) {
   return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+  // return `${date.getFullYear()}-${(date.getMonth() + 1)}-${date.getDate()}`
 }
 
 function getTaskTotal(initial, final) {
@@ -63,7 +67,6 @@ function calculateTotal() {
   lastTotalTime = totalTime
 
   const totalFormattedTime = formatTime(totalTime)
-  console.log(totalFormattedTime)
   if (totalFormattedTime[0] < 0 || totalFormattedTime[1] < 0) {
     addActivityButton.disabled = true
     return result.innerText = "horas inválidas"
@@ -95,7 +98,7 @@ function addActivity() {
   const deleteButton = document.createElement("button")
   deleteButton.innerText = "✖"
   deleteButton.classList.add("delete")
-  deleteButton.addEventListener("click", () => task.remove())
+  deleteButton.addEventListener("click", () => deleteTaskInLocalStorage(task) && task.remove())
 
   task.appendChild(deleteButton)
   task.appendChild(startTime)
@@ -112,3 +115,79 @@ function createInputElement(type, readOnly = false) {
   if (readOnly) input.readOnly = true
   return input
 }
+
+function clearIntervals() {
+  const intervals = document.querySelectorAll(".interval")
+  for (const interval of intervals) {
+    interval.remove()
+  }
+}
+
+function loadIntervals() {
+  for (let i = 0; i < getIntervalsQuantity(); i++) {
+    addActivity()
+  }
+  const intervals = document.querySelectorAll(".interval")
+  intervals.forEach((interval, index) => {
+    const intervalData = JSON.parse(localStorage.getItem(`${index + " " + getFormattedDate(current)}`))
+    if (intervalData) {
+      interval.children[1].value = intervalData.startTime
+      interval.children[2].value = intervalData.endTime
+      interval.children[3].value = intervalData.description
+      interval.children[4].value = intervalData.totalTime
+    }
+  })
+}
+
+function getIntervalsQuantity() {
+  let i = 0
+  while (localStorage.getItem(`${i + " " + getFormattedDate(current)}`)) {
+    i++
+  }
+  return i
+}
+
+function saveInLocalStorage() {
+  let intervals = document.querySelectorAll(".interval")
+  intervals = Array.from(intervals)
+  intervals = intervals.map((interval) => {
+    return {
+      startTime: interval.children[1].value,
+      endTime: interval.children[2].value,
+      description: interval.children[3].value,
+      totalTime: interval.children[4].value
+    }
+  }).filter((interval) => interval.startTime && interval.endTime && interval.description && interval.totalTime)
+  intervals.forEach((interval, index) => {
+    localStorage.setItem(`${index + " " + getFormattedDate(current)}`, JSON.stringify(interval))
+  })
+}
+
+function deleteTaskInLocalStorage() {
+  let quantity = getIntervalsQuantity()
+  for (let i = 0; i < quantity; i++) {
+    localStorage.removeItem(`${i + " " + getFormattedDate(current)}`)
+  }
+  quantity--
+  for (let i = 0; i < quantity; i++) {
+    localStorage.setItem(`${i + " " + getFormattedDate(current)}`, localStorage.getItem(`${i + 1 + " " + getFormattedDate(current)}`))
+  }
+  localStorage.removeItem(`${quantity + " " + getFormattedDate(current)}`)
+  return true
+}
+
+previousDate.addEventListener("click", () => {
+  changeDate(-1)
+  clearIntervals()
+  loadIntervals()
+})
+
+nextDate.addEventListener("click", () => {
+  changeDate(1)
+  clearIntervals()
+  loadIntervals()
+})
+
+
+
+
