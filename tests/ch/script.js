@@ -4,29 +4,34 @@ const currentDate = document.getElementById("currentDate")
 const addActivityButton = document.getElementById("add")
 const calculateButton = document.getElementById("calculate")
 const result = document.getElementById("result")
+const theme = document.getElementById('change-theme')
+const root = document.documentElement
 
 let current = new Date()
 let lastTotalTime = 0
 
-currentDate.innerText = getFormattedDate(current)
+currentDate.value = getFormattedDate(current)
+document.addEventListener("DOMContentLoaded", loadIntervals)
 
 addActivityButton.addEventListener("click", addActivity)
 
-setInterval(calculateTotal, 1)
-setInterval(saveInLocalStorage, 500)
+setInterval(calculateTotal, 200)
+setInterval(saveTasksInLocalStorage, 500)
 
-document.addEventListener("DOMContentLoaded", () => {
+currentDate.addEventListener("change", () => {
+  const [year, month, day] = currentDate.value.split("-")
+  current = new Date(year, month - 1, day)
+  clearIntervals()
   loadIntervals()
 })
 
 function changeDate(days) {
   current.setDate(current.getDate() + days)
-  currentDate.innerText = getFormattedDate(current)
+  currentDate.value = getFormattedDate(current)
 }
 
 function getFormattedDate(date) {
-  return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
-  // return `${date.getFullYear()}-${(date.getMonth() + 1)}-${date.getDate()}`
+  return `${date.getFullYear()}-${(date.getMonth() + 1)}-${date.getDate()}`
 }
 
 function getTaskTotal(initial, final) {
@@ -60,16 +65,15 @@ function calculateTotal() {
     }
   }
 
-  if (totalTime === lastTotalTime) {
-    return
-  }
+  if (totalTime === lastTotalTime) return
 
   lastTotalTime = totalTime
 
   const totalFormattedTime = formatTime(totalTime)
   if (totalFormattedTime[0] < 0 || totalFormattedTime[1] < 0) {
     addActivityButton.disabled = true
-    return result.innerText = "horas inválidas"
+    result.innerText = "horas inválidas"
+    return
   } else {
     addActivityButton.disabled = false
   }
@@ -88,6 +92,7 @@ function formatTime(time) {
 }
 
 function addActivity() {
+  const inside = document.querySelector(".inside")
   const task = document.createElement("div")
   task.classList.add("interval")
 
@@ -106,7 +111,7 @@ function addActivity() {
   task.appendChild(description)
   task.appendChild(totalTime)
 
-  document.body.appendChild(task)
+  inside.appendChild(task)
 }
 
 function createInputElement(type, readOnly = false) {
@@ -147,7 +152,7 @@ function getIntervalsQuantity() {
   return i
 }
 
-function saveInLocalStorage() {
+function saveTasksInLocalStorage() {
   let intervals = document.querySelectorAll(".interval")
   intervals = Array.from(intervals)
   intervals = intervals.map((interval) => {
@@ -188,6 +193,8 @@ nextDate.addEventListener("click", () => {
   loadIntervals()
 })
 
+theme.addEventListener('click', changeTheme)
 
-
-
+function changeTheme() {
+  root.classList.contains('light-mode') ? root.classList.remove('light-mode') : root.classList.add('light-mode')
+}

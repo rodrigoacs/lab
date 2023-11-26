@@ -1,9 +1,17 @@
 :root {
-  --color--darkerbg: #101010;
-  --color--darkbg: #242424;
-  --color--lightbg: #eee;
-  --color--lighttext: #fff;
-  --color--darktext: #000;
+  --color-bg: #141414;
+  --color-text: #fff;
+  --color-green: #adff2f;
+  --color-red: #ff0000;
+  --invert: 1;
+}
+
+.light-mode {
+  --color-bg: #fff;
+  --color-text: #141414;
+  --color-green: #008000;
+  --color-red: #ff0000;
+  --invert: 0;
 }
 
 * {
@@ -11,14 +19,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
 }
 
 *:not(input) {
-  color: var(--color--lighttext);
+  color: var(--color-text);
 }
 
 html {
-  background-color: var(--color--darkerbg);
+  background-color: var(--color-bg);
   font-size: 16px;
   min-height: 100%;
 }
@@ -30,7 +39,24 @@ body {
   min-height: 100%;
 }
 
-input[type=time] {
+input[type=date] {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  text-align: center;
+  border: none;
+}
+
+input[type=date]:focus-visible {
+  outline: none;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  /* color */
+  filter: invert(var(--invert));
+}
+
+input[type=time],
+input[type=date] {
   width: 7rem;
   height: 2.5rem;
   font-size: 1rem;
@@ -51,15 +77,15 @@ button {
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
-  background-color: var(--color--darkerbg);
-  color: var(--color--lighttext);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   border: none;
   cursor: pointer;
+  text-align: center;
 }
 
 .delete {
-  color: red;
-  transition: all 0.1s;
+  color: var(--color-red);
 }
 
 .delete:hover {
@@ -72,9 +98,8 @@ button {
 
 #add {
   font-size: 1.2rem;
-  color: greenyellow;
+  color: var(--color-green);
   font-weight: 500;
-  transition: all 0.3s;
 }
 
 #add:hover {
@@ -91,21 +116,21 @@ button {
   align-items: center;
   margin: 1rem;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .interval input {
-  color: var(--color--lighttext);
-  background-color: var(--color--darkerbg);
+  color: var(--color-text);
+  background-color: var(--color-bg);
   text-align: center;
   border: none;
-  border-bottom: 2px solid var(--color--lighttext);
+  border-bottom: 2px solid var(--color-text);
   margin: .1rem;
-  transition: all 0.3s;
 }
 
 .interval input:focus {
   outline: none;
-  border-bottom: 2px solid var(--color--darkerbg);
+  border-bottom: 2px solid var(--color-bg);
 }
 
 .menu {
@@ -114,4 +139,18 @@ button {
   justify-content: space-between;
   align-items: center;
   margin: 1rem;
+}
+
+@media only screen and (max-width: 625px) {
+  .interval {
+    flex-direction: column;
+  }
+
+  .interval input {
+    width: 80%;
+    height: 2.5rem;
+    flex: auto;
+  }
+
+
 }

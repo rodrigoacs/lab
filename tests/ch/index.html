@@ -13,23 +13,26 @@
 </head>
 
 <body>
-  <div class="menu">
-    <div>
-      <button id="previousDate"><</button>
-      <span id="currentDate"></span>
-      <button id="nextDate">></button>
+  <div class="inside">
+    <div class="menu">
+      <button id="change-theme" style="width: auto;">🌙/☀️</button>
+      <div>
+        <button id="previousDate">&lt;</button>
+        <input type="date" id="currentDate"></input>
+        <button id="nextDate">&gt;</button>
+      </div>
+      <span id="result">00:00</span>
     </div>
-    <span id="result">00:00</span>
-    <button id="add">+</button>
-  </div>
 
-  <div class="interval">
-    <button disabled></button>
-    <input type="time">
-    <input type="time">
-    <input type="text">
-    <input type="time" readonly></input>
+    <div class="interval">
+      <button disabled></button>
+      <input type="time">
+      <input type="time">
+      <input type="text">
+      <input type="time" readonly></input>
+    </div>
   </div>
+  <button id="add" style="width: 100%;">+</button>
 </body>
 
 <script src="script.js"></script>
