@@ -1,53 +1,28 @@
-<?php
-$servername = "";
-$database = "";
-$username = "";
-$password = "";
+<!DOCTYPE html>
+<html lang="en">
 
-$conn = mysqli_connect($servername, $username, $password, $database);
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calibre Online</title>
+</head>
 
-$query = "SELECT 
-            b.title,
-            b.author_sort,
-            GROUP_CONCAT(t.name) as tags
-          FROM 
-            books_tags_link btl
-            INNER JOIN books b ON btl.book = b.id
-            INNER JOIN tags t ON btl.tag = t.id
-          GROUP BY 
-            b.path
-          ORDER BY 
-            b.author_sort";
+<body>
+  <h1>Pesquisar</h1>
+  <input type="text" name="search" id="search" placeholder="Pesquisar">
+  <div id="result"></div>
+</body>
 
-$result = mysqli_query($conn, $query);
+<script>
+  document.getElementById("search").focus();
 
-echo "<h1>Books</h1>";
-echo "<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/water.css@2/out/water.css'>";
+  document.getElementById("search").addEventListener("keyup", function(event) {
+    fetch("search.php?search=" + document.getElementById("search").value)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("result").innerHTML = data;
+      });
+  });
+</script>
 
-if (mysqli_num_rows($result) > 0) {
-  echo "
-    <table border='1'>
-      <tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Tags</th>
-      </tr>";
-  $i = 0;
-  while ($row = mysqli_fetch_assoc($result)) {
-    $i++;
-    echo "
-      <tr>
-        <td>" . $i . "</td>
-        <td>" . $row["title"] . "</td>
-        <td>" . $row["author_sort"] . "</td>
-        <td>" . $row["tags"] . "</td>
-      </tr>";
-  }
-  echo "</table>";
-} else {
-  echo "0 results";
-}
-
-mysqli_close($conn);
-?>
+</html>
